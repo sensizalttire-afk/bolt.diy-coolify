@@ -5,7 +5,9 @@ WORKDIR /app
 # Instalar pnpm e wrangler
 
 # Corepack ve pnpm güncellemesi, imza hatası için
-RUN corepack enable && corepack prepare pnpm@latest --activate && npm install -g wrangler
+RUN corepack enable
+RUN corepack prepare pnpm@latest --activate
+RUN npm install -g wrangler
 
 # Copiar arquivos de dependências
 COPY package.json pnpm-lock.yaml ./
