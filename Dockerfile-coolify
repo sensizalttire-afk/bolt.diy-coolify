@@ -8,11 +8,11 @@ WORKDIR /app
 RUN npm install -g pnpm
 RUN npm install -g wrangler
 
-# Copiar arquivos de dependências
-COPY package.json pnpm-lock.yaml ./
 
-# Instalar dependências
-RUN pnpm install --no-frozen-lockfile
+# Copiar package.json ve pnpm-lock.yaml
+COPY package.json pnpm-lock.yaml ./
+# Bağımlılıkları kesinlikle lockfile'a göre kur
+RUN pnpm install --frozen-lockfile
 
 # Copiar código  fonte e scripts
 COPY . .
