@@ -27,7 +27,7 @@
     "dockerbuild": "docker build -t bolt-ai:development -t bolt-ai:latest --target bolt-ai-development .",
     "typecheck": "tsc",
     "typegen": "wrangler types",
-    "preview": "pnpm run build && pnpm run start",
+  "preview": "pnpm run build && vite preview --host 0.0.0.0 --port 5173",
     "prepare": "husky",
     "clean": "node scripts/clean.js",
     "electron:dev": "pnpm electron:dev:main",
